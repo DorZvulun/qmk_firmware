@@ -31,62 +31,57 @@
 
 // Light combinations
 #define SET_INDICATORS(hsv)                                 \
-    {0, 1, HSV_OVERRIDE_HELP(hsv, INDICATOR_BRIGHTNESS)},\
-    {35 + 0, 1, hsv}
+    {0, 1, HSV_OVERRIDE_HELP(hsv, INDICATOR_BRIGHTNESS)}, { \
+        35 + 0, 1, hsv                                      \
+    }
 #define SET_UNDERGLOW(hsv) \
-    {1, 6, hsv},\
-    {35 + 1, 6, hsv}
-#define SET_NUMPAD(hsv)                     \
-    {35 + 18, 14, hsv}\
-    // {35 + 22, 3, hsv}, 
+    {1, 6, hsv}, {         \
+        35 + 1, 6, hsv     \
+    }
+#define SET_NUMPAD(hsv)  \
+    { 35 + 18, 14, hsv } \
+    // {35 + 22, 3, hsv},
     // {35 + 27, 3, hsv}
 #define SET_NUMROW(hsv)                                                               \
-    {11, 2, hsv}, {21, 2, hsv}, {31, 2, hsv}, \
-    {35 + 11, 2, hsv}, {35 + 21, 2, hsv}, {35 + 31, 2, hsv}
+    {11, 2, hsv}, {21, 2, hsv}, {31, 2, hsv}, {35 + 11, 2, hsv}, {35 + 21, 2, hsv}, { \
+        35 + 31, 2, hsv                                                               \
+    }
 #define SET_INNER_COL(hsv) \
-    {32, 4, hsv},\
-    {35 + 32, 4, hsv}
-#define SET_OUTER_COL(hsv) \
-    {8, 4, hsv},\
-    {17, 2, hsv},\
-    {35 + 8, 4, hsv},\
-    {35 + 17, 2, hsv}
-#define SET_THUMB_CLUSTER(hsv) \
-    {8, 1, hsv},\
-    {17, 2, hsv},\
-    {26, 2, hsv},\
-    {35 + 8, 1, hsv},\
-    {35 + 17, 2, hsv},\
-    {35 + 26, 2, hsv}
+    {32, 4, hsv}, {        \
+        35 + 32, 4, hsv    \
+    }
+#define SET_OUTER_COL(hsv)                         \
+    {8, 4, hsv}, {17, 2, hsv}, {35 + 8, 4, hsv}, { \
+        35 + 17, 2, hsv                            \
+    }
+#define SET_THUMB_CLUSTER(hsv)                                                      \
+    {8, 1, hsv}, {17, 2, hsv}, {26, 2, hsv}, {35 + 8, 1, hsv}, {35 + 17, 2, hsv}, { \
+        35 + 26, 2, hsv                                                             \
+    }
 #define SET_RIGHT_ARROW_STACK(hsv) \
-    {21,1,hsv},\
-    {23,2,hsv},\
-    {31, 1, hsv}
-#define SET_LEFT_ARROW_STACK(hsv) \
-    {21 + 11, 1, hsv},\
-    {23 + 11, 2, hsv},\
-    {31 + 11, 1, hsv}
-#define SET_LAYER_ID(hsv)\
-/*ind*/    {0, 1, HSV_OVERRIDE_HELP(hsv, INDICATOR_BRIGHTNESS)},\
-/*ind*/    {35 + 0, 1, HSV_OVERRIDE_HELP(hsv, INDICATOR_BRIGHTNESS)},\
-/*und_glw*/    {1, 6, hsv},\
-/*und_glw*/    {35 + 1, 6, hsv},\
-/*ctrl*/    {7, 4, hsv},\
-/*ctrl*/    {35 + 7, 4, hsv},\
-/*cmd_alt*/    {26, 2, hsv},\
-/*cmd_alt*/    {35 + 26, 2, hsv}
+    {21, 1, hsv}, {23, 2, hsv}, {  \
+        31, 1, hsv                 \
+    }
+#define SET_LEFT_ARROW_STACK(hsv)           \
+    {21 + 11, 1, hsv}, {23 + 11, 2, hsv}, { \
+        31 + 11, 1, hsv                     \
+    }
+#define SET_LAYER_ID(hsv)                                                                                                                                                                                                                                                            \
+    /*ind*/ {0, 1, HSV_OVERRIDE_HELP(hsv, INDICATOR_BRIGHTNESS)}, /*ind*/ {35 + 0, 1, HSV_OVERRIDE_HELP(hsv, INDICATOR_BRIGHTNESS)}, /*und_glw*/ {1, 6, hsv}, /*und_glw*/ {35 + 1, 6, hsv}, /*ctrl*/ {7, 4, hsv}, /*ctrl*/ {35 + 7, 4, hsv}, /*cmd_alt*/ {26, 2, hsv}, /*cmd_alt*/ { \
+        35 + 26, 2, hsv                                                                                                                                                                                                                                                              \
+    }
 
 enum sofle_layers /**/
 {
-    _DEFAULTS = 0,
-    _QWERTY   = 0,
+    _DEFAULTS  = 0,
+    _QWERTY    = 0,
     _COLEMAKDH = 1,
-    _LOWER = 2,
-    _RAISE = 3,
-    _ADJUST = 4,
-    _NUMPAD = 5,
-    _SWITCH = 6,
-    _CONTROLS = 7
+    _LOWER     = 2,
+    _RAISE     = 3,
+    _ADJUST    = 4,
+    _NUMPAD    = 5,
+    _SWITCH    = 6,
+    _CONTROLS  = 7
 };
 
 enum custom_keycodes /**/
@@ -166,7 +161,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,-----------------------------------------.                    ,-----------------------------------------.
      * | trans|  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  |  -_  |  +=  | F11  |
      * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-     * |  `   |   1  |   2  |   3  |   4  |   5  |                    |23l_win|12r_win|top_win|max_win|  0   | F12  |
+     * |  `   |   1  |   2  |   3  |   4  |   5  |                    |13l_win|23r_win|top_win|max_win|  0   | F12  |
      * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
      * | trans|   !  |   @  |   #  |   $  |   %  |-------.    ,-------|   <- |lft_win|bot_win|rgt_win|     |  \|  |
      * |------+------+------+------+------+------|  MUTE |    | PLAY  |------+------+------+------+------+------|
@@ -180,7 +175,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //,------------------------------------------------.                    ,---------------------------------------------------.
         /**/ _______, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, /*                      */ KC_F6, KC_F7, KC_F8, KC_MINS, KC_EQL, KC_F11,
         //|------+-------+--------+--------+--------+------|                   |--------+-------+--------+--------+--------+---------|
-        /**/ KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, /*                            */ LCA(KC_E), LCA(KC_G), LCA(KC_UP), LCA(KC_ENT), KC_0, KC_F12,
+        /**/ KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, /*                            */ LCA(KC_G), LCA(KC_E), LCA(KC_UP), LCA(KC_ENT), KC_0, KC_F12,
         //|------+-------+--------+--------+--------+------|                   |--------+-------+--------+--------+--------+---------|
         /**/ _______, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, /*               */ KC_LEFT, LCA(KC_COMM), LCA(KC_DOWN), LCA(KC_DOT), KC_NO, KC_SLSH,
         //|------+-------+--------+--------+--------+------|  ===  |   |  ===  |--------+-------+--------+--------+--------+---------|
