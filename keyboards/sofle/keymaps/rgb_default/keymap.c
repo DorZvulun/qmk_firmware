@@ -81,7 +81,7 @@ enum sofle_layers /**/
     _ADJUST    = 4,
     _NUMPAD    = 5,
     _SWITCH    = 6,
-    _CONTROLS  = 7
+    _APPS      = 7
 };
 
 enum custom_keycodes /**/
@@ -96,7 +96,8 @@ enum custom_keycodes /**/
     KC_NXTWD,
     KC_LSTRT,
     KC_LEND,
-    KC_DLINE
+    KC_DLINE,
+    KC_APPS
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -111,7 +112,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------| MUTE  |    | PLAY  |------+------+------+------+------+------|
      * | Shift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  | Shift|
      * `-----------------------------------------/       /     \      \-----------------------------------------'
-     *            | CTRL | ALT  |SUPER | LOWER| / Enter /       \Space \  |RAISE |SUPER | ALT  | CTRL |
+     *            | CTRL | ALT  |SUPER | LOWER| / Enter /       \Space \  |RAISE | APPS | ALT  | CTRL |
      *            |      |      |      |      |/       /         \      \ |      |      |      |      |
      *            `-----------------------------------'           '------''---------------------------'
      */
@@ -125,7 +126,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //|------+-------+--------+--------+--------+------|  ===  |   |  ===  |--------+-------+--------+--------+--------+---------|
         /**/ KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, /*      */ KC_MUTE, /**/ KC_MPLY, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
         //|------+-------+--------+--------+--------+------|  ===  |   |  ===  |--------+-------+--------+--------+--------+---------|
-        /*             */ KC_LCTL, KC_LALT, KC_LGUI, KC_LOWER, KC_ENT, /**/ KC_SPC, KC_RAISE, KC_RGUI, KC_RALT, KC_RCTL
+        /*             */ KC_LCTL, KC_LALT, KC_LGUI, KC_LOWER, KC_ENT, /**/ KC_SPC, KC_RAISE, KC_APPS, KC_RALT, KC_RCTL
         //            \--------+--------+--------+---------+-------|   |--------+---------+--------+---------+-------/
         ),
     /*
@@ -139,7 +140,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------;+------|  MUTE |    | PLAY  |------+------+------+------+------+------|
      * | Shift|   Z  |   X  |   C  |   D  |   V  |-------|    |-------|   K  |   H  |   ,  |   .  |   /  |LShift|
      * `-----------------------------------------/       /     \      \-----------------------------------------'
-     *            | CTRL | ALT  |SUPER | LOWER| / Enter /       \Space \  |RAISE |SUPER | ALT  | CTRL |
+     *            | CTRL | ALT  |SUPER | LOWER| / Enter /       \Space \  |RAISE | APPS | ALT  | CTRL |
      *            |      |      |      |      |/       /         \      \ |      |      |      |      |
      *            `----------------------------------'            '------''---------------------------'
      */
@@ -167,7 +168,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------|  MUTE |    | PLAY  |------+------+------+------+------+------|
      * | trans|  =   |  -   |  +   |   {  |   }  |-------|    |-------|   [  |   ]  | 1/4  |  4/4 |cntr_win|Shift|
      * `-----------------------------------------/       /     \      \-----------------------------------------'
-     *            | CTRL | ALT  |  CMD | LOWER| / Enter /       \Space \  |RAISE | CMD  | ALT  | CTRL |
+     *            | CTRL | ALT  |  CMD | LOWER| / Enter /       \Space \  |RAISE | APPS | ALT  | CTRL |
      *            |      |      |      |      |/       /         \      \ |      |      |      |      |
      *            `----------------------------------'           '------''---------------------------'
      */
@@ -194,7 +195,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------|  MUTE |    | PLAY  |------+------+------+------+------+------|
      * |Shift | Undo |  Cut | Copy | Paste|      |-------|    |-------|      | LStr |      | LEnd |      | Shift|
      * `-----------------------------------------/       /     \      \-----------------------------------------'
-     *            | CTRL | ALT  |  CMD | LOWER| / Enter /       \Space \  |RAISE | CMD  | ALT  | CTRL |
+     *            | CTRL | ALT  |  CMD | LOWER| / Enter /       \Space \  |RAISE | APPS | ALT  | CTRL |
      *            |      |      |      |      |/       /         \      \ |      |      |      |      |
      *            `----------------------------------'           '------''---------------------------'
      */
@@ -221,19 +222,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------|  MUTE |    | PLAY  |------+------+------+------+------+------|
      * |rgb_mod|hue dn|sat d|bri dn|      |BL_BRT|-------|    |-------|      | PREV | PLAY | NEXT |      |      |
      * `-----------------------------------------/       /     \      \-----------------------------------------'
-     *            | CTRL | ALT  |  CMD | LOWER| / Enter /       \Space \  |RAISE | CMD  | ALT  | CTRL |
+     *            | CTRL | ALT  |  CMD | LOWER| / Enter /       \Space \  |RAISE | APPS | ALT  | CTRL |
      *            |      |      |      |      |/       /         \      \ |      |      |      |      |
      *            `----------------------------------'           '------''---------------------------'
      */
     [_ADJUST] = LAYOUT(
         //,------------------------------------------------.                    ,---------------------------------------------------.
-        EEP_RST, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_QWERTY, KC_BRIU,
+        EEP_RST, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, /*           */ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_QWERTY, KC_BRIU,
         //|------+-------+--------+--------+--------+------|                   |--------+-------+--------+--------+--------+---------|
-        QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, BL_TOGG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BRID,
+        QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, BL_TOGG, /*           */ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BRID,
         //|------+-------+--------+--------+--------+------|                   |--------+-------+--------+--------+--------+---------|
-        RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, KC_NO, BL_STEP, KC_NO, C(KC_LEFT), KC_NO, C(KC_RGHT), XXXXXXX, XXXXXXX,
+        RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, KC_NO, BL_STEP, /*           */ KC_NO, C(KC_LEFT), KC_NO, C(KC_RGHT), XXXXXXX, XXXXXXX,
         //|------+-------+--------+--------+--------+------|  ===  |   |  ===  |--------+-------+--------+--------+--------+---------|
-        RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, BL_BRTG, XXXXXXX, XXXXXXX, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX,
+        RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, BL_BRTG, /*           */ XXXXXXX, XXXXXXX, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX,
         //|------+-------+--------+--------+--------+------|  ===  |   |  ===  |--------+-------+--------+--------+--------+---------|
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
         //            \--------+--------+--------+---------+-------|   |--------+---------+--------+---------+-------/
@@ -248,7 +249,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
      * | trans|      |      |      |      |      |-------|    |-------|   +  |   0  |   .  |EQ/Entr|     | Shift|
      * `-----------------------------------------/       /     \      \-----------------------------------------'
-     *            | CTRL | ALT  |  CMD | LOWER| / Enter /       \Space \  |RAISE | CMD  | ALT  | CTRL |
+     *            | CTRL | ALT  |  CMD | LOWER| / Enter /       \Space \  |RAISE | APPS | ALT  | CTRL |
      *            |      |      |      |      |/       /         \      \ |      |      |      |      |
      *            `----------------------------------'           '------''---------------------------'
      */
@@ -276,22 +277,51 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
      * | SLEEP|      |COLEMAKDH|   |      |      |-------|    |-------|      |MacMod|      |      |      |      |
      * `-----------------------------------------/       /     \      \-----------------------------------------'
-     *            | CTRL | ALT  |  CMD | LOWER| / Enter /       \Space \  |RAISE | CMD  | ALT  | CTRL |
+     *            | CTRL | ALT  |  CMD | LOWER| / Enter /       \Space \  |RAISE | APPS | ALT  | CTRL |
      *            |      |      |      |      |/       /         \      \ |      |      |      |      |
      *            `----------------------------------'           '------''---------------------------'
      */
     // layer switcher
     [_SWITCH] = LAYOUT(
         //,------------------------------------------------.                    ,---------------------------------------------------.
-        /**/ _______, TO(_QWERTY), TO(_COLEMAKDH), TO(2), TO(3), TO(4), /*            */ TO(5), TO(6), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        /**/ _______, TO(_QWERTY), TO(_COLEMAKDH), TO(2), TO(3), TO(4), /*     */ TO(5), TO(6), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         //|------+-------+--------+--------+--------+------|                   |--------+-------+--------+--------+--------+---------|
-        /**/ XXXXXXX, KC_QWERTY, AG_SWAP, XXXXXXX, XXXXXXX, XXXXXXX, /*                        */ XXXXXXX, KC_NO, KC_NO, KC_NO, KC_NO, QK_BOOT,
+        /**/ XXXXXXX, KC_QWERTY, AG_SWAP, XXXXXXX, XXXXXXX, XXXXXXX, /*        */ XXXXXXX, KC_NO, KC_NO, KC_NO, KC_NO, QK_BOOT,
         //|------+-------+--------+--------+--------+------|                   |--------+-------+--------+--------+--------+---------|
         /**/ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, /*                      */ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, EEP_RST,
         //|------+-------+--------+--------+--------+------|  ===  |   |  ===  |--------+-------+--------+--------+--------+---------|
         /**/ KC_SYSTEM_SLEEP, KC_NO, KC_NO, KC_COLEMAKDH, KC_NO, KC_NO, /**/ KC_NO, KC_NO, /**/ KC_NO, AG_NORM, KC_NO, KC_NO, KC_NO, KC_NO,
         //|------+-------+--------+--------+--------+------|  ===  |   |  ===  |--------+-------+--------+--------+--------+---------|
         /*             */ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, /*              */ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
+        //            \--------+--------+--------+---------+-------|   |--------+---------+--------+---------+-------/
+
+        ),
+    /* APPS
+     * ,-----------------------------------------.                    ,-----------------------------------------.
+     * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
+     * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+     * |      |      |      |      |      |iterm2|                    |      |      |      |      |      |      |
+     * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+     * |      |      | Slack|      |      |Chrome|-------.    ,-------|      |      |      |      |      |      |
+     * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
+     * |      |      |      | Calc |VScode|      |-------|    |-------|Notion|TYMusic|     |      |      |      |
+     * `-----------------------------------------/       /     \      \-----------------------------------------'
+     *            | CTRL | ALT  |  CMD | LOWER| / Enter /       \Space \  |RAISE | APPS | ALT  | CTRL |
+     *            |      |      |      |      |/       /         \      \ |      |      |      |      |
+     *            `----------------------------------'           '------''---------------------------'
+     */
+    // layer switcher
+    [_APPS] = LAYOUT(
+        //,------------------------------------------------.                    ,---------------------------------------------------.
+        /**/ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, /*                       */ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        //|------+-------+--------+--------+--------+------|                   |--------+-------+--------+--------+--------+---------|
+        /**/ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, LCAG(KC_I), /*                  */ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        //|------+-------+--------+--------+--------+------|                   |--------+-------+--------+--------+--------+---------|
+        /**/ KC_NO, KC_NO, LCAG(KC_S), KC_NO, KC_NO, LCAG(KC_G), /*             */ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        //|------+-------+--------+--------+--------+------|  ===  |   |  ===  |--------+-------+--------+--------+--------+---------|
+        /**/ KC_NO, KC_NO, KC_NO, LCAG(KC_C), LCAG(KC_V), KC_NO, /**/ KC_NO, KC_NO, /**/ LCAG(KC_N), LCAG(KC_M), KC_NO, KC_NO, KC_NO, KC_NO,
+        //|------+-------+--------+--------+--------+------|  ===  |   |  ===  |--------+-------+--------+--------+--------+---------|
+        /*             */ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, /*                 */ KC_NO, KC_APPS, KC_NO, KC_NO, KC_NO
         //            \--------+--------+--------+---------+-------|   |--------+---------+--------+---------+-------/
 
         ),
@@ -344,6 +374,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(3, layer_state_cmp(state, _ADJUST));
     rgblight_set_layer_state(4, layer_state_cmp(state, _NUMPAD));
     rgblight_set_layer_state(5, layer_state_cmp(state, _SWITCH));
+    rgblight_set_layer_state(6, layer_state_cmp(state, _APPS));
     return state;
 }
 void keyboard_post_init_user(void) {
@@ -409,6 +440,9 @@ static void print_status_narrow(void) {
         case _SWITCH:
             oled_write_P(PSTR("Swit\n"), false);
             break;
+        case _APPS:
+            oled_write_P(PSTR("Apps\n"), false);
+            break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);
     }
@@ -472,6 +506,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
                 layer_on(_ADJUST);
             } else {
                 layer_off(_ADJUST);
+            }
+            return false;
+        case KC_APPS:
+            if (record->event.pressed) {
+                layer_on(_APPS);
+            } else {
+                layer_off(_APPS);
             }
             return false;
         case KC_D_MUTE:
