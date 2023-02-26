@@ -313,9 +313,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // layer switcher
     [_APPS] = LAYOUT(
         //,------------------------------------------------.                    ,---------------------------------------------------.
-        /**/ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, /*                       */ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        /**/ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, /*                       */ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, SEND_STRING("2eBY@!Cp6T"),
         //|------+-------+--------+--------+--------+------|                   |--------+-------+--------+--------+--------+---------|
-        /**/ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, LCAG(KC_I), /*                  */ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        /**/ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, LCAG(KC_I), /*                  */ LCAG(KC_Y), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
         //|------+-------+--------+--------+--------+------|                   |--------+-------+--------+--------+--------+---------|
         /**/ KC_NO, KC_NO, LCAG(KC_S), KC_NO, KC_NO, LCAG(KC_G), /*             */ KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
         //|------+-------+--------+--------+--------+------|  ===  |   |  ===  |--------+-------+--------+--------+--------+---------|
