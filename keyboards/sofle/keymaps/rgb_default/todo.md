@@ -1,6 +1,8 @@
 # Important
 Forgot to backup / push the _APPS layer. can it be recreated from the controller?
 
+# configure - cmd+k-cmd+j fold all functions in vscode, cmdk+cmd0 collaps
+ 
 # next level ideas
 
 * space to use as meh or lower/raise double tap to use as layers +2/-2
