@@ -568,3 +568,17 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 }
 
 #endif
+
+// #ifdef SPASS_ENABLE
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case S_PASS:
+            if (record->event.pressed) {
+                SEND_STRING("");
+            }
+            return false;
+    }
+
+    return true;
+}
+// #endif
