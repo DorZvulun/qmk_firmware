@@ -12,6 +12,8 @@ fi
 qmk clean &&
     qmk compile -kb sofle/rev1 -km ${layout} &&
     echo -e "$Y<<<<< DISCONNECT KEYBOARD HALFS AND PLUG IN MASTER >>>>>$NC\n\n"
+read -p "Press Enter when ready to flash master..."
 qmk flash -kb sofle/rev1 -km ${layout} &&
     echo -e "$Y<<<<< DISCONNECT KEYBOARD HALFS AND PLUG IN SLAVE >>>>>$NC\n\n"
+read -p "Press Enter when ready to flash slave..."
 qmk flash -kb sofle/rev1 -km ${layout}
