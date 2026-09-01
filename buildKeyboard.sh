@@ -1,0 +1,19 @@
+#! /bin/bash
+
+Y="\033[1;33m"
+NC="\033[0m"
+
+if [[ -z "${1}" ]]; then
+    layout="rgb_default"
+else
+    layout=${1}
+fi
+
+qmk clean &&
+    qmk compile -kb sofle/rev1 -km ${layout} &&
+    echo -e "$Y<<<<< DISCONNECT KEYBOARD HALFS AND PLUG IN MASTER >>>>>$NC\n\n"
+read -p "Press Enter when ready to flash master..."
+qmk flash -kb sofle/rev1 -km ${layout} &&
+    echo -e "$Y<<<<< DISCONNECT KEYBOARD HALFS AND PLUG IN SLAVE >>>>>$NC\n\n"
+read -p "Press Enter when ready to flash slave..."
+qmk flash -kb sofle/rev1 -km ${layout}
